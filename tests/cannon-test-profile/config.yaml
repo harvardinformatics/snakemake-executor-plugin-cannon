@@ -1,20 +1,21 @@
-executor: cannon
+executor: slurm
 
 set-resources:
   a:
-    slurm_partition: sapphire
-    mem: 5G
+    #slurm_partition: sapphire
+    mem: 2001G
     cpus_per_task: 1
     runtime: 30m
 
   b:
-    slurm_partition: gpu_test
+    #slurm_partition: gpu_test
     mem: 10G
     cpus_per_task: 4
     runtime: 2h
     #slurm_extra: "'--gres=gpu:2'" # No longer supported as of slurm plugin 1.9.0
     #gpu: 2 # Doesn't work on Cannon? Splits to two nodes for some reason
-    gres: "'gpu:2'"
+    #gres: "'gpu:2'"
+    gpu: 2
 
   c:
     cpus_per_task: 8
